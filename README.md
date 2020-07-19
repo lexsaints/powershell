@@ -14,4 +14,4 @@
 	powershell脚本,批量域管理、exchange邮箱账号操作等
 	
 	将脚本上传到服务器(此处为windows2008R2系统)
-![AD域控](../../ad_user.jpg)
+![AD域控](../master/ad_user.jpg)
