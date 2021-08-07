@@ -1,13 +1,13 @@
-$Contents=Import-Csv C:\mailbox.csv  #½«CSVÎÄ¼şÖĞÄÚÈİµ¼Èë£¬,¸³Öµ¸ø±äÁ¿ÎªÁËÀûÓÃÊı×é½øĞĞÖğ¸ö¶ÁÈ¡;
+$Contents=Import-Csv C:\mailbox.csv  #å°†CSVæ–‡ä»¶ä¸­å†…å®¹å¯¼å…¥ï¼Œ,èµ‹å€¼ç»™å˜é‡ä¸ºäº†åˆ©ç”¨æ•°ç»„è¿›è¡Œé€ä¸ªè¯»å–;
 $Database="WIN-96VYFIEYNCA\First Storage Group\Mailbox Database"
 $password=(ConvertTo-SecureString -AsPlainText "fl2x3@c" -Force)
 $password="fl2x3@c"
-#ÓÃfor Ñ­»·£¬Öğ¸ö¶ÁÈ¡£¬CSVºÍEXCEL ÀàËÆ£¬ÎÒÃÇÈ¡¶ÔÓ¦µÄServer£¬Username£¬Password Èı¸öÀ¸Î»µÄÖµ.
+#ç”¨for å¾ªç¯ï¼Œé€ä¸ªè¯»å–ï¼ŒCSVå’ŒEXCEL ç±»ä¼¼ï¼Œæˆ‘ä»¬å–å¯¹åº”çš„Serverï¼ŒUsernameï¼ŒPassword ä¸‰ä¸ªæ ä½çš„å€¼.
 for ($i=0;$i -le 2;$i++){
 #$Server=$Contents.Server[$i]
 $Password=(ConvertTo-SecureString -AsPlainText $Contents.Password[$i] -Force)
 $pass=$Contents.Password[$i]
 New-Mailbox -Name $Contents.Name[$i] -FirstName $Contents.FirstName[$i] -LastName $Contents.LastName[$i] -Alias $Contents.Alias[$i] -UserPrincipalName $Contents.UserPrincipalName[$i] -Password $Password -OrganizationalUnit $Contents.OrganizationalUnit[$i] -Database 'WIN-96VYFIEYNCA\First Storage Group\Mailbox Database'
--Department '²¿ÃÅ' -Company 'À¥Ã÷º£¹Ø'
+-Department 'éƒ¨é—¨' -Company 'å…¬å¸'
 #Write-Host "The $i line Servername is $pass"
 }
